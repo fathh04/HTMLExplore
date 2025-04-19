@@ -7,10 +7,10 @@ use App\Http\Controllers\StudentDashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KelasController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 Route::get('/master', function(){
     return view('layout.master');
 });
