@@ -72,7 +72,6 @@
                 <div class="mb-3">
                     <label for="role" class="form-label">Daftar Sebagai</label>
                     <select name="role" id="role" class="form-select @error('role') is-invalid @enderror" required>
-                        <option value="guru">Guru</option>
                         <option value="siswa">Siswa</option>
                     </select>
                     @error('role')

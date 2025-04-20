@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'Masuk Kelas - Akadia')
+@section('title', 'Masuk Kelas - HTMLExplore')
 @section('menuKelas', 'active')
 @section('content')
 <div class="container py-5">
@@ -35,31 +35,88 @@
         </li>
     </ul>
 
-    <!-- Tab Content -->
-    <div class="tab-content" id="kelasTabContent">
-        <!-- Tab Jelajah -->
+            <!-- Tab Content -->
+            <div class="tab-content" id="kelasTabContent">
+                <!-- Tab Jelajah -->
         <div class="tab-pane fade show active" id="jelajah" role="tabpanel" aria-labelledby="jelajah-tab">
             <div class="accordion" id="materiAccordion">
-                @if ($materi->isEmpty())
-                <p>Materi tidak ditemukan.</p>
-            @else
-                @foreach ($materi as $m)
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading{{ $m->id }}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $m->id }}" aria-expanded="false" aria-controls="collapse{{ $m->id }}">
-                                {{ $m->judul }}
-                            </button>
-                        </h2>
-                        <div id="collapse{{ $m->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $m->id }}" data-bs-parent="#materiAccordion">
-                            <div class="accordion-body">
-                                <p>{{ $m->deskripsi }}</p>
-                                <a href="{{ asset('storage/' . $m->file_materi) }}" target="_blank" class="btn btn-primary mt-3">Lihat Materi</a>
+                {{-- Materi 1 --}}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Konsep HTML
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#materiAccordion">
+                        <div class="accordion-body">
+                            <div id="carouselKonsep" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselKonsep" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselKonsep" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselKonsep" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{ asset('img/konsep1.png') }}" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('img/konsep2.png') }}" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('img/konsep3.png') }}" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselKonsep" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselKonsep" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            @endif
+                </div>
 
+                {{-- Materi 2 --}}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Kegunaan HTML
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#materiAccordion">
+                        <div class="accordion-body">
+                            <div id="carouselKegunaan" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselKegunaan" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselKegunaan" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselKegunaan" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{ asset('img/kegunaan1.png') }}" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('img/kegunaan2.png') }}" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('img/kegunaan3.png') }}" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselKegunaan" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselKegunaan" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -109,11 +166,11 @@
                     <!-- Feed Card 1 -->
                     <div class="card shadow-sm mb-4">
                         <div class="ratio" style="--bs-aspect-ratio: 100%;">
-                            <img src="{{ asset('img/peta.jpg') }}" class="card-img-top object-fit-cover" alt="Postingan" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="{{ asset('img/konten1.png') }}" class="card-img-top object-fit-cover" alt="Postingan" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Responsive Website</h5>
-                            <p class="card-text">Saya berhasil membuat layout responsive dengan Bootstrap! 😄</p>
+                            <h5 class="card-title">Kode program</h5>
+                            <p class="card-text">Aduhh, otw bikin web nih 😄</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button class="btn btn-outline-danger btn-sm">❤️ 20 Suka</button>
                                 <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#feedComment1">💬 Komentar</button>
@@ -135,11 +192,11 @@
                     <!-- Feed Card 2 -->
                     <div class="card shadow-sm mb-4">
                         <div class="ratio" style="--bs-aspect-ratio: 100%;">
-                            <img src="{{ asset('img/peta.jpg') }}" class="card-img-top object-fit-cover" alt="Postingan" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="{{ asset('img/konten2.jpg') }}" class="card-img-top object-fit-cover" alt="Postingan" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Belajar CSS Grid</h5>
-                            <p class="card-text">Hari ini belajar tentang CSS Grid Layout, seru banget! 🔥</p>
+                            <h5 class="card-title">Masih belajar hehe</h5>
+                            <p class="card-text">tampilan media pembelajaran nih 🔥</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button class="btn btn-outline-danger btn-sm">❤️ 12 Suka</button>
                                 <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#feedComment2">💬 Komentar</button>

@@ -55,9 +55,6 @@
         <div class="menu-item text-white @yield('menuCPdanTP')" onclick="location.href='{{ route('CPdanTP') }}'">
             <i class="bi bi-clipboard-check-fill"></i> <span>CP dan TP</span>
         </div>
-        <div class="menu-item text-white @yield('menuCPdanTP')" onclick="location.href='{{ route('Feed') }}'">
-            <i class="bi bi-clipboard-check-fill"></i> <span>FeedPembelajaran</span>
-        </div>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">

@@ -33,10 +33,10 @@ Route::post('/kuis/store', [KuisController::class, 'store'])->name('kuis.store')
 Route::middleware(['auth'])->group(function () {
     Route::get('/kelas', [DashboardController::class, 'KelasSiswa'])->name('kelas');
     Route::get('/beranda', [DashboardController::class, 'Beranda'])->name('beranda');
+    Route::get('/peringkat', [DashboardController::class, 'PeringkatSiswa'])->name('peringkat');
+    Route::get('/petunjuk', [DashboardController::class, 'petunjukSiswa'])->name('petunjuk');
+    Route::get('/CPdanTP', [DashboardController::class, 'CPdanTPSiswa'])->name('CPdanTP');
 });
-Route::get('/peringkat', [DashboardController::class, 'PeringkatSiswa'])->name('peringkat');
-Route::get('/petunjuk', [DashboardController::class, 'petunjukSiswa'])->name('petunjuk');
-Route::get('/CPdanTP', [DashboardController::class, 'CPdanTPSiswa'])->name('CPdanTP');
 
 Route::get('/isiKelas', function () {
     return view('siswa.isiKelas');

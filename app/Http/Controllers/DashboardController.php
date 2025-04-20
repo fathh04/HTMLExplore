@@ -19,7 +19,6 @@ class DashboardController extends Controller
         return view('siswa.kelas', compact('kelas'));
     }
 
-
     public function PeringkatSiswa()
     {
         return view('siswa.peringkat');
